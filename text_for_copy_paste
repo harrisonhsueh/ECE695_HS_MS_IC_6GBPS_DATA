@@ -1,0 +1,8 @@
+#for step 62.5MHz
+tstart07 = 75e-9
+tstop07 = 250e-9
+data07 = get_data("data_noiseless_300ns_62p5MHz_step_both_directions.csv", 3)
+VOUT07 = data07[0:2]
+DIN07 = data07[2:4]
+clk_rising_edges07, din_edges07, clk_period07, data_period07, phase07 = get_edges_period_phase(
+    VOUT07[0], VOUT07[1],  DIN07[1], clk_threshold, din_threshold, tstart=tstart07, tstop=tstop07)
